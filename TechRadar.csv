@@ -1,0 +1,60 @@
+﻿name,ring,quadrant,isNew,description
+Java,Adopt,Languages & Frameworks,FALSE,"Use Java for longer running services or services with constant load. Use Java JDK 11. May be used in some cases for Lambda's, e.g. with Kinesis or Kafka, but Lambda + Java + Spring is a bad option. "
+JS,Adopt,Languages & Frameworks,FALSE,For front-end development
+Typescript,Assess,Languages & Frameworks,FALSE,"Static typing, forward feature, transcompiled JS"
+Node.js,Hold,Languages & Frameworks,FALSE,Used for Lambdas or microservices. May be still ok to use for Backend-for-frontend pattern.
+Scala,Hold,Languages & Frameworks,FALSE,Used for microservices
+Python,Adopt,Languages & Frameworks,FALSE,Use for Lambdas
+Spring/Springboot,Adopt,Languages & Frameworks,FALSE,
+Dropwizard/Bluewizard,Hold,Languages & Frameworks,FALSE,Use SpringBoot instead
+Play framework,Hold,Languages & Frameworks,FALSE,Use SpringBoot instead
+Decibel,Adopt,Languages & Frameworks,FALSE,
+React,Adopt,Languages & Frameworks,FALSE,
+Angular,Hold,Languages & Frameworks,FALSE,use React instead
+Handlebars,Adopt,Languages & Frameworks,FALSE,
+KCL,Adopt,Techniques-and-tools,FALSE,Use when using Kinesis streams
+Kafka streams,Hold,Techniques-and-tools,FALSE,Use KCL instead
+Oracle,Hold,Data,FALSE,
+Aurora Postgres,Adopt,Data,FALSE,
+S3,Adopt,Data,FALSE,
+Dynamo DB,Adopt,Data,FALSE,"For key-value use cases, check on costs for high volume read/writes."
+EKS,Adopt,Platform-and-infrastructure,FALSE,For any microservice
+Kafka/MSK,Hold,Platform-and-infrastructure,FALSE,"Use Kinesis instead. with Kafka, you need to manage the servers, you can’t scale down partitions (without major efforts), stability of the kafka clusters in regards to rebalancing. Also with Lambda’s Kinesis is way better, as it gives Lambda a queue lookahead and it autoscales faster."
+Kinesis,Adopt,Platform-and-infrastructure,FALSE,
+SQS,Adopt,Platform-and-infrastructure,FALSE,
+Snowflake,Assess,Data,FALSE,
+Redshift,Trial,Data,FALSE,
+DeltaLake,Assess,Data,FALSE,
+Launch Darkly,Adopt,Platform-and-infrastructure,FALSE,Use to feature toggle all releases
+Vert.x,Hold,Languages & Frameworks,FALSE,Use SpringBoot instead
+dB2,Hold,Platform-and-infrastructure,FALSE,
+NewRelic,Hold,Platform-and-infrastructure,FALSE,
+Cloudwatch,Adopt,Platform-and-infrastructure,FALSE,
+Athena,Adopt,Data,FALSE,
+SNS,Adopt,Platform-and-infrastructure,FALSE,
+Consul,,Platform-and-infrastructure,FALSE,"Previously used for service-mesh capabilities, but now used primarily for its key/value store"
+Vault,,Platform-and-infrastructure,FALSE,"Previously used for supporting service-to-service TLS, but now used only for secret management"
+Tomcat,Hold,Platform-and-infrastructure,FALSE,
+Jetty,Adopt,Platform-and-infrastructure,FALSE,
+Spring MVC,Adopt,Languages & Frameworks,FALSE,
+JAX-RS,Adopt,Languages & Frameworks,FALSE,
+Kotlin,Assess,Languages & Frameworks,FALSE,Does Kotlin provide enough benefits over Java to switch?
+Fargate ECS,Hold,Platform-and-infrastructure,FALSE,EKS + Fargate = Prefered combination. Can be used to reduce costs for EKS
+Fargate EKS,Trial,Platform-and-infrastructure,FALSE,EKS + Fargate = Prefered combination. Can be used to reduce costs for EKS
+Spot Instances,Trial,Platform-and-infrastructure,FALSE,"perferred with Fargate, if not on Fargate on EKS"
+Hadoop/YARN/MR,Hold,Platform-and-infrastructure,FALSE,
+Hadoop/HDFS,Hold,Data,FALSE,
+Hbase,Hold,Data,FALSE,
+Apache Phoenix,Hold,Platform-and-infrastructure,FALSE,
+Hive/Tez,Hold,Data,FALSE,
+mysql,Hold,Data,FALSE,
+mongo,Hold,Data,FALSE,
+IBM MQ,Hold,Platform-and-infrastructure,FALSE,
+JMS,Hold,Languages & Frameworks,FALSE,
+Grafana,Hold,Platform-and-infrastructure,FALSE,
+Graylog,Hold,Platform-and-infrastructure,FALSE,
+Istio,Adopt,Platform-and-infrastructure,FALSE,
+AppMesh,Assess,Platform-and-infrastructure,FALSE,"Try out and if works well, start using that instead of Istio"
+EFS,Hold,Platform-and-infrastructure,FALSE,
+Redis/Elasticache,Hold,Data,FALSE,
+Lambda,Adopt,Platform-and-infrastructure,FALSE,For short running tasks and spiky workloads. Good integration with Kinesis for autoscaling and DLQ handling.
